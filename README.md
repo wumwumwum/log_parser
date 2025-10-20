@@ -1,4 +1,4 @@
-# log_parser
+	# log_parser
 Parse and create a summary file of Windows Event Log/ syslog file (Python)
 
 Simple Project #2
@@ -18,41 +18,42 @@ Steps:
 
 5.) I created a script by opening Notepad++ and creating a file called "log_parser.py" 
 
-5.) I opened the log_parser.py file in Notepad++ and wrote the following:
+6.) I opened the log_parser.py file in Notepad++ and wrote the following:
 
-import re, collections
+	import re, collections
 
-log_file = "system.log"
-report_file = "log_summary.txt"
+	log_file = "system.log"
+	report_file = "log_summary.txt"
 
-pattern = re.compile(r"ERROR|WARNING|INFO")
-counts = collections.Counter()
+	pattern = re.compile(r"ERROR|WARNING|INFO")
+	counts = collections.Counter()
 
-with open(log_file) as f:
-    for line in f:
-        match = pattern.search(line)
-        if match:
-            counts[match.group()] += 1
+	with open(log_file) as f:
+    	for line in f:
+        	match = pattern.search(line)
+        	if match:
+           		counts[match.group()] += 1
 
-# Print to console
-print("Summary of log levels:")
-for level, count in counts.items():
-    print(f"{level}: {count}")
+	# Print to console
+	print("Summary of log levels:")
+	for level, count in counts.items():
+    	print(f"{level}: {count}")
 
-# Save to text file
-with open(report_file, "w") as out:
-    out.write("Summary of log levels:\n")
-    for level, count in counts.items():
-        out.write(f"{level}: {count}\n")
+	# Save to text file
+	with open(report_file, "w") as out:
+    	out.write("Summary of log levels:\n")
+    	for level, count in counts.items():
+        	out.write(f"{level}: {count}\n")
 
-print(f"\nReport saved as {report_file}")
+	print(f"\nReport saved as {report_file}")
 
 
+7.) Testing. Ran py file test functionality. In cmd,:
 
-  
+	python log_parser.py
 
-6.) Testing. Ran py file test functionality. In cmd,:
+8.) Opened file "log_summary.txt" located in same directory as py script. Output:
 
-	python sys_mon.py
+	Summary of log levels:
+	INFO: 1
 
-7.) Opened file "system_log.csv" located in same directory as py script
