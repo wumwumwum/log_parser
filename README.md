@@ -1,11 +1,11 @@
 # log_parser
 Parse and create a summary file of Windows Event Log/ syslog file (Python)
 
-Simple Project #2
-To force myself into familiarity with scripting, I wanted to try some simple scripts that have practical use.
-The goal was to create a sciprt that would parse and summarize sys log files. This would provide a count of event levels/ groups.
+Sample Project #2
+The goal was to create a script that would parse and summarize sys log files. This would provide a count of event levels/ groups.
 
 Steps:
+
 1.) I ensured that Python 3 was installed (it was) and verified the version (python 3.13)
 
 2.) I opened a cmd (admin) and installed dependencies using:
